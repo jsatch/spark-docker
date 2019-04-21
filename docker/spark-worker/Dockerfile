@@ -1,6 +1,7 @@
 FROM spark-base:2.4.1
 
 COPY start-worker.sh /
+COPY README.md /
 
 ENV SPARK_WORKER_WEBUI_PORT 8081
 ENV SPARK_WORKER_LOG /spark/logs

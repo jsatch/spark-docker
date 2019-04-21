@@ -66,6 +66,20 @@ services:
     volumes:
        - /mnt/spark-apps:/opt/spark-apps
        - /mnt/spark-data:/opt/spark-data
+  spark-submit:
+    container_name: spark-submit
+    image: spark-submit:2.4.1
+    hostname: spark-submit
+    depends_on:
+      - spark-master
+    environment:
+      - "SPARK_LOCAL_IP=spark-submit"
+    networks:
+      spark-network:
+        ipv4_address: 10.5.0.6
+    volumes:
+       - /mnt/spark-apps:/opt/spark-apps
+       - /mnt/spark-data:/opt/spark-data
 networks:
   spark-network:
     driver: bridge

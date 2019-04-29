@@ -1,4 +1,4 @@
-FROM spark-base:2.4.1
+FROM spark-base:2.4.2
 
 COPY start-worker.sh /
 COPY README.md /

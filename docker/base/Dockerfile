@@ -27,6 +27,8 @@ RUN apt-get -y install wget ca-certificates && \
     ln -s "${SCALA_HOME}/bin/"* "/usr/bin/" && \
     rm -rf "/tmp/"*
 
+RUN apt-get -y install python3
+
 #Scala instalation
 RUN export PATH="/usr/local/sbt/bin:$PATH" && apt install ca-certificates wget tar && mkdir -p "/usr/local/sbt" && wget -qO - --no-check-certificate "https://cocl.us/sbt-0.13.16.tgz" | tar xz -C /usr/local/sbt --strip-components=1 && sbt sbtVersion
 
